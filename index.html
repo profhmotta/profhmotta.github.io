@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio Técnico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #b6b5b5;
+            color: #333;
+            padding: 20px;
+        }
+
+        img.profile {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+
+        .carousel {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .carousel-content {
+            display: none;
+        }
+
+        .carousel-content.active {
+            display: block;
+        }
+
+        .carousel-buttons {
+            margin-top: 15px;
+        }
+
+        .carousel-buttons button {
+            padding: 8px 12px;
+            margin: 0 5px;
+            background-color: #0078D4;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: #005ea6;
+        }
+
+        .badge {
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://profhmotta.wordpress.com/wp-content/uploads/2024/10/11111kkk-1.jpg" alt="Imagem" class="profile" />
+
+    <h2>Seja Bem-vindo...</h2>
+
+    <div style="max-width: 700px; margin: 0 auto; text-align: center; line-height: 1.6;">
+        <p>
+            Sou um técnico de Informática que estou em constante aprendizado, busco sempre ajudar em tudo que posso.
+            Quem puder sempre dar um <a href="#" style="color: #0024ee;">commit</a> ajudando em meus projetos, fique sempre à vontade.
+            Obrigado.
+        </p>
+    </div>
+
+    <h2>Habilidades</h2>
+
+    <div class="carousel" id="habilidadesCarousel">
+        <div class="carousel-content active">
+            <h3>Sistemas Operacionais</h3>
+            <span class="badge"><img src="https://img.shields.io/badge/Windows-0078D4?logo=windows&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/Linux-E34F26?logo=linux&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/FreeBSD-AB2B28?logo=freebsd&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/OpenBSD-FFD203?logo=openbsd&logoColor=black" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/Raspberry%20Pi-C51A4A?logo=raspberrypi&logoColor=white" /></span>
+        </div>
+
+        <div class="carousel-content">
+            <h3>Micro Serviços</h3>
+            <span class="badge"><img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" /></span>
+        </div>
+
+        <div class="carousel-content">
+            <h3>Virtualização</h3>
+            <span class="badge"><img src="https://img.shields.io/badge/VirtualBox-183A61?logo=virtualbox&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/VMware-607078?logo=vmware&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/Vagrant-1563FF?logo=vagrant&logoColor=white" /></span>
+        </div>
+
+        <div class="carousel-content">
+            <h3>Programação</h3>
+            <span class="badge"><img src="https://img.shields.io/badge/HTML-239120?logo=html5&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/CSS-239120?logo=css3&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white" /></span>
+        </div>
+
+        <div class="carousel-content">
+            <h3>Redes</h3>
+            <span class="badge"><img src="https://img.shields.io/badge/OpenWRT-00B4B6?logo=openwrt&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/OPNsense-%23F57C00?logo=opnsense&logoColor=white" /></span>
+            <span class="badge"><img src="https://img.shields.io/badge/pfSense-394B59?style=for-the-badge&logoColor=white" /></span>
+        </div>
+
+        <div class="carousel-buttons">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Próximo</button>
+        </div>
+    </div>
+
+    <h4>Projetos em andamento... (clique para conferir!)</h4>
+    <p>👇</p>
+    <div style="margin-top: 20px;">
+        <a href="https://github.com/profhmotta" target="_blank" style="text-decoration: none;">
+            <img src="https://img.shields.io/badge/Acessar%20GitHub-100000?logo=github&logoColor=white&labelColor=24292e&style=for-the-badge" alt="GitHub - profhmotta" />
+        </a>
+    </div>
+    
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".carousel-content");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+    </script>
+
+</body>
+</html>
